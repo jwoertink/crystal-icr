@@ -6,4 +6,5 @@ matrix:
   allow_failures:
     - crystal: nightly
 script:
+  - make build
   - make test
