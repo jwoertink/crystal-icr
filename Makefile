@@ -2,7 +2,7 @@ CRYSTAL_BIN ?= $(shell which crystal)
 ICR_BIN ?= $(shell which icr)
 
 build:
-	$(CRYSTAL_BIN) build bin/icr src/icr/cli.cr
+	$(CRYSTAL_BIN) build -o bin/icr src/icr/cli.cr
 clean:
 	rm -f ./bin/icr
 test:
