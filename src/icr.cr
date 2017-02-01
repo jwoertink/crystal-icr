@@ -13,7 +13,7 @@ require "./icr/syntax_check_result"
 require "./icr/console"
 
 module Icr
-  VERSION = "0.2.13"
+  VERSION = "0.2.13b"
   AUTHOR = "Potapov Sergey"
   HOMEPAGE = "https://github.com/greyblake/crystal-icr"
 
@@ -22,4 +22,13 @@ module Icr
   DELIMITER = "|||YIH22hSkVQN|||"
   CRYSTAL_COMMAND = "crystal"
   ROOT_PATH = File.expand_path("../..", __FILE__)
+  
+  def self.debugger
+    {% if flag?(:debug) %}
+      puts "DEBUG?"
+    {% end %}
+    puts "CRYSTAL: #{caller}"
+    Icr::Console.new(false).start
+  end
 end
+
